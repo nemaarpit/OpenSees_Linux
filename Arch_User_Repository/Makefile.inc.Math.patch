@@ -1,0 +1,18 @@
+diff --git a/SRC/Makefile.incl b/SRC/Makefile.incl
+index a5538c0f..77f759e0 100644
+--- a/SRC/Makefile.incl
++++ b/SRC/Makefile.incl
+@@ -199,10 +199,10 @@ FE_INCLUDES  = -I$(FE)/matrix \
+                -I$(FE)/api \
+ 	       -I$(FE)/interpreter \
+                -I$(FE) \
+-               -I$(SUPERLUdir) \
++               -I$(SUPERLU_INCLUDE) \
+                -I$(FE)/package \
+-	       -I$(FE)/../OTHER/AMD \
+-               -I$(FE)/../OTHER/CSPARSE \
++               -I$(AMD_INCLUDE) \
++               -I$(CSPARSE_INCLUDE) \
+                -I$(FE)/../OTHER/Triangle \
+                -I$(FE)/../OTHER/Tetgen \
+ 	       -I$(FE)/../OTHER/AMGCL
