@@ -1,0 +1,150 @@
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver.h
+index 7a4bb5ec..40dc552a 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver.h
+@@ -40,10 +40,8 @@
+ 
+ #include <LinearSOESolver.h>
+ #include <Vector.h>
+-extern "C" {
+ #include <cs.h>
+-}
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ 
+ class PFEMCompressibleLinSOE;
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver_Mumps.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver_Mumps.h
+index d4e155cf..297397dc 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver_Mumps.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMCompressibleSolver_Mumps.h
+@@ -40,9 +40,7 @@
+ 
+ #include <PFEMCompressibleSolver.h>
+ #include <Vector.h>
+-extern "C" {
+ #include <cs.h>
+-}
+ #include <dmumps_c.h>
+ 
+ class PFEMCompressibleLinSOE;
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMLinSOE.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMLinSOE.h
+index 9db5ef6e..1fae335d 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMLinSOE.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMLinSOE.h
+@@ -40,9 +40,8 @@
+ #include <OPS_Stream.h>
+ #include <Vector.h>
+ #include <ID.h>
+-extern "C" {
+ #include <cs.h>
+-}
++
+ class PFEMSolver;
+ 
+ class PFEMLinSOE : public LinearSOE
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMQuasiSolver.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMQuasiSolver.h
+index 3c0f2ca4..e64728ed 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMQuasiSolver.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMQuasiSolver.h
+@@ -33,10 +33,8 @@
+ 
+ #include <LinearSOESolver.h>
+ #include <Vector.h>
+-extern "C" {
+ #include <cs.h>
+-}
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ 
+ class PFEMQuasiLinSOE;
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver.h
+index 32254024..f5592ea6 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver.h
+@@ -39,9 +39,7 @@
+ // What: "@(#) PFEMSolver.h, revA"
+ 
+ #include <LinearSOESolver.h>
+-extern "C" {
+ #include <cs.h>
+-}
+ 
+ class PFEMLinSOE;
+ 
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Laplace.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Laplace.h
+index fcdef038..9ea6e2da 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Laplace.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Laplace.h
+@@ -38,10 +38,8 @@
+ // What: "@(#) PFEMSolver_Laplace.h, revA"
+ 
+ #include <PFEMSolver.h>
+-extern "C" {
+ #include <cs.h>
+-}
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ class PFEMLinSOE;
+ 
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_LumpM.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_LumpM.h
+index de37ee9d..ad52ea2d 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_LumpM.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_LumpM.h
+@@ -29,10 +29,8 @@
+ #define PFEMSolver_LumpM_h
+ 
+ #include <PFEMSolver.h>
+-extern "C" {
+ #include <cs.h>
+-}
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ class PFEMLinSOE;
+ 
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Umfpack.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Umfpack.h
+index e7448cb2..154f9fc3 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Umfpack.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMSolver_Umfpack.h
+@@ -39,10 +39,8 @@
+ // What: "@(#) PFEMSolver_Umfpack.h, revA"
+ 
+ #include <PFEMSolver.h>
+-extern "C" {
+ #include <cs.h>
+-}
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ class PFEMLinSOE;
+ 
+diff --git a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMUnifiedSolver.h b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMUnifiedSolver.h
+index c51e43f8..9a864da9 100644
+--- a/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMUnifiedSolver.h
++++ b/SRC/system_of_eqn/linearSOE/sparseGEN/PFEMUnifiedSolver.h
+@@ -39,9 +39,7 @@
+ 
+ #include <LinearSOESolver.h>
+ 
+-extern "C" {
+ #include <cs.h>
+-}
+ 
+ class PFEMUnifiedLinSOE;
+ 
+diff --git a/SRC/system_of_eqn/linearSOE/umfGEN/UmfpackGenLinSolver.h b/SRC/system_of_eqn/linearSOE/umfGEN/UmfpackGenLinSolver.h
+index 819bdf2d..cf5c35fb 100644
+--- a/SRC/system_of_eqn/linearSOE/umfGEN/UmfpackGenLinSolver.h
++++ b/SRC/system_of_eqn/linearSOE/umfGEN/UmfpackGenLinSolver.h
+@@ -36,7 +36,7 @@
+ #define UmfpackGenLinSolver_h
+ 
+ #include <LinearSOESolver.h>
+-#include "../../../../OTHER/UMFPACK/umfpack.h"
++#include <umfpack.h>
+ 
+ class UmfpackGenLinSOE;
+ 
